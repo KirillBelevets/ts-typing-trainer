@@ -1,0 +1,30 @@
+@tailwind utilities;
+@import "tailwindcss";
+
+:root {
+  scroll-behavior: smooth;
+
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --muted: #f1f5f9;
+  --ring: #3b82f6;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --muted: #1e293b;
+  --ring: #3b82f6;
+}
+
+body {
+  @apply bg-[--background] text-[--foreground] font-sans antialiased;
+}
+
+button {
+  @apply rounded-md px-4 py-2 text-sm font-medium transition-colors;
+}
+
+textarea {
+  @apply font-mono text-sm;
+}
