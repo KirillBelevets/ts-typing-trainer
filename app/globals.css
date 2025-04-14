@@ -1,30 +1,46 @@
+@import "tailwindcss/preflight";
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
-@import "tailwindcss";
 
 :root {
   scroll-behavior: smooth;
-
   --background: #ffffff;
   --foreground: #0f172a;
   --muted: #f1f5f9;
   --ring: #3b82f6;
+  --accent: #2563eb;
 }
 
+/* 2. Dark theme overrides */
 .dark {
   --background: #0f172a;
   --foreground: #f8fafc;
   --muted: #1e293b;
   --ring: #3b82f6;
+  --accent: #60a5fa;
 }
 
+/* 3. Global styles */
 body {
-  @apply bg-[--background] text-[--foreground] font-sans antialiased;
+  @apply bg-[--background] text-[--foreground] font-sans antialiased transition-colors duration-300;
 }
 
 button {
-  @apply rounded-md px-4 py-2 text-sm font-medium transition-colors;
+  @apply rounded-md px-4 py-2 text-sm font-medium transition-colors duration-200 shadow hover:shadow-md focus:ring-2 focus:ring-[--ring] focus:outline-none;
 }
 
+/* Buttons with emphasis (override these via Tailwind classes if needed) */
+.btn-primary {
+  @apply bg-[--accent] text-white hover:bg-blue-700;
+}
+
+/* Textarea styles */
 textarea {
-  @apply font-mono text-sm;
+  @apply w-full font-mono text-sm bg-[--muted] text-[--foreground] border border-gray-300 dark:border-gray-600 rounded p-3 shadow-sm focus:ring-2 focus:ring-[--ring] transition duration-200;
+}
+
+/* Flashcard component container (optional use) */
+.flashcard {
+  @apply bg-[--muted] dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-lg p-6 shadow-lg transition-all duration-300;
 }

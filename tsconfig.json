@@ -28,8 +28,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "types",
     ".next/types/**/*.ts",
-    "next.config.mjs"
+    "next.config.mjs",
+    "next-env.d.ts",
+    "app/**/*"
   ],
   "exclude": ["node_modules"],
   "types": ["node"]
